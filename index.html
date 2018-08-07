@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
+  <title>Plante - Feu - Eau</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -24,6 +24,7 @@
   <!-- Add your site or application content here -->
   <div class="container">
     <div class="choixAdverse">
+
       <div class="adverseFeu" id="feuBot">
         <p>Feu</p>
       </div>
@@ -33,26 +34,30 @@
       <div class="adversePlante" id="planteBot">
         <p>Plante</p>
       </div>
-      <span>
+      <span class="pointPoster">
         Points adversaire :
-        <span class="pointAdverse"></span>
+        <span id="pointAdverse"></span>
       </span>
     </div>
-    <div class="choixJoueur">
-        <div class="joueurFeu" onclick="myMoveFeu()" id="moveFeu">
-          <p>Feu</p>
-        </div>
-        <div class="joueurEau" onclick="myMoveEau()" id="moveEau">
-          <p>Eau</p>
-        </div>
-        <div class="joueurPlante" onclick="myMovePlante()" id="movePlante">
-          <p>Plante</p>
-        </div>
-        <span>
-          T'es points :
-          <span class="pointJoueur"></span>
-        </span>
+    <p class="posterMatch">Manche :
+      <span id="information"></span>
+    </p>
+    <div class="choixJoueur" id="divJoueur">
+
+      </span>
+      <div class="joueurFeu" onclick="myMoveFeu()" id="moveFeu">
+        <p>Feu</p>
       </div>
+      <div class="joueurEau" onclick="myMoveEau()" id="moveEau">
+        <p>Eau</p>
+      </div>
+      <div class="joueurPlante" onclick="myMovePlante()" id="movePlante">
+        <p>Plante</p>
+      </div>
+      <span class="pointPoster">
+        T'es points :
+        <span id="pointJoueur"></span>
+    </div>
   </div>
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
