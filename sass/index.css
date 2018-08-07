@@ -87,28 +87,49 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
 
 .container {
-  width: 90%;
+  width: 95%;
   margin: auto;
+}
+
+.container .pointPoster {
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  left: 50px;
+}
+
+.container .posterMatch {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  width: 220px;
+  margin: 100px auto auto auto;
+}
+
+.container .posterMatch span {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 .choixAdverse {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
-  grid-row-gap: 20px;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   -ms-flex-line-pack: center;
       align-content: center;
-  height: 200px;
+  margin: 50px 0 0 0;
   text-align: center;
 }
 
@@ -116,46 +137,51 @@ body, html {
   background: red;
   width: 200px;
   position: relative;
+  border-radius: 8px;
 }
 
 .choixAdverse .adverseEau {
   background: blue;
   width: 200px;
   position: relative;
+  border-radius: 8px;
 }
 
 .choixAdverse .adversePlante {
   background: green;
   width: 200px;
   position: relative;
+  border-radius: 8px;
 }
 
 .choixJoueur {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
-  grid-row-gap: 20px;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   -ms-flex-line-pack: center;
       align-content: center;
-  height: 200px;
+  margin: 150px 0 0 0;
   text-align: center;
-  position: relative;
-  top: 210px;
+  height: 200px;
+  top: 150px;
+  z-index: 2;
 }
 
 .choixJoueur .joueurFeu {
   background: red;
   width: 200px;
   position: relative;
+  border-radius: 8px;
 }
 
 .choixJoueur .joueurEau {
   background: blue;
   width: 200px;
+  border-radius: 8px;
   position: relative;
 }
 
@@ -163,6 +189,7 @@ body, html {
   background: green;
   width: 200px;
   position: relative;
+  border-radius: 8px;
 }
 
 /* ==========================================================================
