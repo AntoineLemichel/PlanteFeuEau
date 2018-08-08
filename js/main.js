@@ -4,6 +4,77 @@ var plante = document.getElementById("movePlante");
 
 var scorePlayer = 0;
 var scoreBot = 0;
+var btn = document.getElementById("dialogueButton");
+var btn2 = document.getElementById("dialogueButton2");
+var pseudo = document.getElementById("pseudo").value;
+document.getElementById("pseudo").style.display = "none";
+btn.addEventListener("click", dialogueIntro);
+document.getElementById("divAdverse").style.display = "none";
+document.getElementById("divJoueur").style.display = "none";
+document.getElementById("posterMatch").style.display = "none";
+document.getElementById("joueurManicien").style.display = "none";
+document.getElementById("botManicien").style.display = "none";
+document.getElementById("dialogueButton2").style.display = "none";
+
+function dialogueIntro() {
+  document.getElementById("premPara").innerHTML = "Vois-tu la barre en bas à gauche ? \
+  C'est ta barre de Manicien, une fois remplie tu as gagnés la partie. Celle en haut à droite est celle de ton adversaire, une fois la sienne remplie, il gagne la partie.";
+  btn.value = "D'accord";
+  document.getElementById("joueurManicien").style.display = "block";
+  document.getElementById("botManicien").style.display = "block";
+  btn.addEventListener("click", dialogueRune);
+}
+
+function dialogueRune() {
+  document.getElementById("premPara").innerHTML = "Tu as 3 runes magics dans la partie. Le \"Feu\", \"L'eau\", la \"Plante\". Le feu gagne contre la plante et perd contre l'eau. L'eau perd contre la plante. Tu as compris ?";
+  document.getElementById("dialogueButton2").style.display = "inline-block";
+  btn.value = "Compris";
+  btn2.value = "What ?!"
+  if (btn.addEventListener("click", dialogueTerrain)) {
+    dialogueTerrain();
+  }
+  if (btn2.addEventListener("click", dialogueRuneIop)) {
+    dialogueRuneIop();
+  }
+}
+
+function dialogueRuneIop() {
+  document.getElementById("premPara").innerHTML = "Le feu gagne sur la plante. L'eau gagne contre le feu. La plante gagne sur l'eau. C'est pourtant pas si compliqué cervelle de Iop !!";
+  btn2.style.display = "none";
+  btn.value = "Ah oui !";
+  btn.addEventListener("click", dialogueTerrain);
+}
+
+function dialogueTerrain() {
+  document.getElementById("premPara").innerHTML = "Voici les runes magics qui viens d'apparaître. En bas est ton terrain de jeu, en haut est celui de l'adversaire.";
+  btn2.style.display = "none";
+  btn.value = "Ça marche";
+  document.getElementById("divJoueur").style.display = "grid";
+  document.getElementById("container").classList.add("bg");
+  btn.addEventListener("click", dialogueName);
+}
+
+function dialogueName() {
+  document.getElementById("premPara").innerHTML = "Au faite je ne connais même pas ton nom ?";
+  btn2.style.display = "none";
+  btn.value = "Tiens";
+  document.getElementById("pseudo").style.display = "inline-block";
+  btn.addEventListener("click", dialogueCombat);
+}
+
+function dialogueCombat() {
+  document.getElementById("premPara").innerHTML = "Ah ! Très jolie prénom " + pseudo + ". C'est l'heure du Duuuuuuuel !";
+  document.getElementById("pseudo").style.display = "none";
+  btn2.style.display = "none";
+  btn.value = "Go !";
+  btn.addEventListener("click", displayDialogue);
+}
+
+function displayDialogue() {
+  document.getElementById("dialogue").style.display = "none";
+  document.getElementById("divAdverse").style.display = "grid";
+}
+
 
 document.getElementById("pointJoueur").innerHTML = scorePlayer;
 document.getElementById("pointAdverse").innerHTML = scoreBot;
@@ -158,6 +229,7 @@ function choiceBot() {
     }
   }
 }
+
 function calculJeuFeu() {
   if (randBot === "Feu") {
     document.getElementById("information").innerHTML = "Égalité"
@@ -194,6 +266,7 @@ function calculJeuPlante() {
   } else if (randBot === "Eau") {
     document.getElementById("information").innerHTML = "Gagné";
     scorePlayer++;
+    progress();
     document.getElementById("pointJoueur").innerHTML = scorePlayer;
   } else {
     document.getElementById("information").innerHTML = "Égalité";
@@ -204,9 +277,13 @@ function endGame() {
   if (scorePlayer === 3) {
     document.getElementById("information").innerHTML = "VICTOIRE !";
     document.getElementById("divJoueur").style.display = "none";
-  }
-  else if (scoreBot === 3){
+  } else if (scoreBot === 3) {
     document.getElementById("information").innerHTML = "DÉFAITE !";
     document.getElementById("divJoueur").style.display = "none";
   }
+}
+
+function progress() {
+  var progress = document.getElementById("progressJoueur");
+  progress.value = scorePlayer;
 }
