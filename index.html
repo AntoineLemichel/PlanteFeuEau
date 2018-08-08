@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Plante - Feu - Eau</title>
+  <title>Duel Magic Devicien</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,8 +22,29 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div class="container">
-    <div class="choixAdverse">
+  <div class="container" id="container">
+    <div class="dialogue" id="dialogue">
+      <div class="body-dialogue">
+        <div class="title">
+          <h2>Maître Webicien</h2>
+        </div>
+        <div class="text">
+          <p id="premPara">
+            Bienvenue à toi jeune apprentie Webicien !
+            <br>Je suis le Maître Webicien et tu es à l'académie Yes We Webicien.
+            <br>Je vais t'apprendre les bases du jeu "Duel Magic Devicien".
+          </p>
+        </div>
+        <div class="button-dialogue">
+          <form>
+            <input type="text" name="pseudo" id="pseudo" placeholder="..." class="pseudo">
+            <input type="button" value="Enchanté" class="button" id="dialogueButton">
+            <input type="button" value="OK" class="button" id="dialogueButton2">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="choixAdverse" id="divAdverse">
 
       <div class="adverseFeu" id="feuBot">
         <p>Feu</p>
@@ -34,12 +55,12 @@
       <div class="adversePlante" id="planteBot">
         <p>Plante</p>
       </div>
-      <span class="pointPoster">
+      <!-- <span class="pointPoster">
         Points adversaire :
         <span id="pointAdverse"></span>
-      </span>
+      </span> -->
     </div>
-    <p class="posterMatch">Manche :
+    <p class="posterMatch" id="posterMatch">Manche :
       <span id="information"></span>
     </p>
     <div class="choixJoueur" id="divJoueur">
@@ -54,9 +75,17 @@
       <div class="joueurPlante" onclick="myMovePlante()" id="movePlante">
         <p>Plante</p>
       </div>
-      <span class="pointPoster">
+      <!-- <span class="pointPoster">
         T'es points :
-        <span id="pointJoueur"></span>
+        <span id="pointJoueur"></span> -->
+    </div>
+    <div id="joueurManicien" class="joueurManicien">
+        <progress id="progressJoueur" max="3" value="0">
+        </progress>
+    </div>
+    <div id="botManicien" class="botManicien">
+      <p>
+        <span>O</span>/3</p>
     </div>
   </div>
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
