@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
+  <title>Duel Magic Devicien</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -13,7 +13,7 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="sass/index.css">
 </head>
 
 <body>
@@ -22,19 +22,110 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <div class="container" id="container">
+
+
+
+
+
+
+    
+    <div class="dialogue" id="dialogue">
+      <div class="body-dialogue">
+        <div class="title">
+          <h2 id="title">Maître Webicien</h2>
+        </div>
+        <div class="text">
+          <p id="premPara">
+            Bienvenue à toi jeune apprentie Webicien !
+            <br>Je suis le Maître Webicien et tu es à l'académie Yes We Webicien.
+            <br>Je vais t'apprendre les bases du jeu "Duel Magic Devicien".
+          </p>
+        </div>
+        <div class="button-dialogue">
+          <form>
+            <input type="text" name="pseudo" id="pseudo" placeholder="..." class="pseudo">
+            <input type="button" value="Enchanté" class="button" id="dialogueButton">
+            <input type="button" value="OK" class="button" id="dialogueButton2">
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="choixAdverse" id="divAdverse">
+      <div class="adverseFeu" id="feuBot">
+        <img src="img/runes_fire.png" alt="Rune of fire">
+      </div>
+      <div class="adverseEau" id="eauBot">
+        <img src="img/runes_water.png" alt="Rune of water">
+      </div>
+      <div class="adversePlante" id="planteBot">
+        <img src="img/runes_plants.png" alt="Rune of plant">
+      </div>
+    </div>
+
+
+
+
+
+    <div class="choixJoueur" id="divJoueur">
+      <div class="joueurFeu" onclick="myMoveFeu()" id="moveFeu">
+        <img src="img/runes_fire.png" alt="Rune of fire">
+      </div>
+      <div class="joueurEau" onclick="myMoveEau()" id="moveEau">
+        <img src="img/runes_water.png" alt="Rune of water">
+      </div>
+      <div class="joueurPlante" onclick="myMovePlante()" id="movePlante">
+        <img src="img/runes_plants.png" alt="Rune of plant">
+      </div>
+    </div>
+
+
+
+
+
+    <div id="joueurManicien" class="joueurManicien">
+      <progress id="progressJoueur" max="3" value="0">
+      </progress>
+      <span id="affichePseudo"></span>
+    </div>
+
+
+
+
+    <div id="botManicien" class="botManicien">
+      <span>Maître Webicien</span>
+      <progress id="progressBot" max="3" value="0">
+      </progress>
+    </div>
+  </div>
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
+
+  </script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+    window.ga = function () {
+      ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+  <!-- <script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
 </body>
 
 </html>
