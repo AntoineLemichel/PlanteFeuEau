@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="fr">
 
 <head>
   <meta charset="utf-8">
@@ -23,10 +23,17 @@
 
   <!-- Add your site or application content here -->
   <div class="container" id="container">
+
+
+
+
+
+
+    
     <div class="dialogue" id="dialogue">
       <div class="body-dialogue">
         <div class="title">
-          <h2>Maître Webicien</h2>
+          <h2 id="title">Maître Webicien</h2>
         </div>
         <div class="text">
           <p id="premPara">
@@ -44,48 +51,57 @@
         </div>
       </div>
     </div>
-    <div class="choixAdverse" id="divAdverse">
 
+
+
+
+
+
+    <div class="choixAdverse" id="divAdverse">
       <div class="adverseFeu" id="feuBot">
-        <p>Feu</p>
+        <img src="img/runes_fire.png" alt="Rune of fire">
       </div>
       <div class="adverseEau" id="eauBot">
-        <p>Eau</p>
+        <img src="img/runes_water.png" alt="Rune of water">
       </div>
       <div class="adversePlante" id="planteBot">
-        <p>Plante</p>
+        <img src="img/runes_plants.png" alt="Rune of plant">
       </div>
-      <!-- <span class="pointPoster">
-        Points adversaire :
-        <span id="pointAdverse"></span>
-      </span> -->
     </div>
-    <p class="posterMatch" id="posterMatch">Manche :
-      <span id="information"></span>
-    </p>
-    <div class="choixJoueur" id="divJoueur">
 
-      </span>
+
+
+
+
+    <div class="choixJoueur" id="divJoueur">
       <div class="joueurFeu" onclick="myMoveFeu()" id="moveFeu">
-        <p>Feu</p>
+        <img src="img/runes_fire.png" alt="Rune of fire">
       </div>
       <div class="joueurEau" onclick="myMoveEau()" id="moveEau">
-        <p>Eau</p>
+        <img src="img/runes_water.png" alt="Rune of water">
       </div>
       <div class="joueurPlante" onclick="myMovePlante()" id="movePlante">
-        <p>Plante</p>
+        <img src="img/runes_plants.png" alt="Rune of plant">
       </div>
-      <!-- <span class="pointPoster">
-        T'es points :
-        <span id="pointJoueur"></span> -->
     </div>
+
+
+
+
+
     <div id="joueurManicien" class="joueurManicien">
-        <progress id="progressJoueur" max="3" value="0">
-        </progress>
+      <progress id="progressJoueur" max="3" value="0">
+      </progress>
+      <span id="affichePseudo"></span>
     </div>
+
+
+
+
     <div id="botManicien" class="botManicien">
-      <p>
-        <span>O</span>/3</p>
+      <span>Maître Webicien</span>
+      <progress id="progressBot" max="3" value="0">
+      </progress>
     </div>
   </div>
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
